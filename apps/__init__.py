@@ -1,15 +1,6 @@
 import os
-
-# import Flask 
 from flask import Flask, current_app
-
 from .config import Config
-
-# Inject Flask magic
-
-
-# Import routing to render the pages
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
@@ -23,7 +14,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    app.config.from_object( Config ) 
+    app.config.from_object(Config)
     db.init_app(app)
 
     from .views import views
