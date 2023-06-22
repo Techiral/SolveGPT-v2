@@ -1,0 +1,11 @@
+Flask
+Jinja2
+openai
+werkzeug
+flask_login
+flask_sqlalchemy
+flask_mail
+flask_admin
+authlib
+sqlalchemy
+flask_minify
