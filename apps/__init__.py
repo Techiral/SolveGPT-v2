@@ -1,7 +1,7 @@
 import os
 
 # import Flask 
-from flask import Flask
+from flask import Flask, current_app
 
 from .config import Config
 
