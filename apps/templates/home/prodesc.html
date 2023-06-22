@@ -1,0 +1,85 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            
+                            <div class="row">
+                                <h3>Product Description Generator</h3>
+                                <!--[ daily sales section ] start-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form class="" action="/product_description_generator" method="post">
+                                                        <div class="form-group">
+                                                            <label for="title">Product Name</label>
+                                                            <input type="text" class="form-control" name="title" placeholder="eg. Increhub">
+                                                            <br>
+                                                            <label for="desc">Describe your Product</label>
+                                                            <input type="text" class="form-control" name="desc" placeholder="eg. A Startup That Helps Building New SAAS Startups">
+                                                            <br>
+                                                            <label for="home">Homepage</label>
+                                                            <input type="text" class="form-control" name="home" placeholder="eg. www.increhub.com">
+                                                            <br>
+                                                            <label for="serve">Services Provided</label>
+                                                            <input type="text" class="form-control" name="serve" placeholder="eg. Build ReadMe Markdown For Your Projects, Generate Product Descriptions For Products, Generate YouTube Video Descriptions, Get Tweet Ideas, Generate Cold Emails For Products, Get Business Pitch Ideas, Get Video Ideas">
+                                                            <p>*Write Services in ("") format.</p>
+                                                            <br>
+                                                            <label for="cost">Price</label>
+                                                            <input type="text" class="form-control" name="cost" placeholder="eg. Both Freemium and Premium Versions. Premium Price Starts From $30 as basic plan.">
+                                                            <br>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ daily sales section ] end-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                    <div>
+                                                        <h3 class="text-primary">Product Description Generated:</h3>
+                                                        <h3 class="lead">{{openAIAnswer|safe}}</h3>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

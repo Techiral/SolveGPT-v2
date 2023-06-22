@@ -1,0 +1,81 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            
+                            <div class="row">
+                                <h3>Cancellation E-mail Generator</h3>
+                                <!--[ daily sales section ] start-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form class="" action="/cancellation_e-mail_generator" method="post">
+                                                        <div class="form-group">
+                                                            <label for="title">Recipent</label>
+                                                            <input type="text" class="form-control" name="title" placeholder="eg. Rakesh">
+                                                            <br>
+                                                            <label for="desc">Company</label>
+                                                            <input type="text" class="form-control" name="desc" placeholder="eg. Board Thumb">
+                                                            <br>
+                                                            <label for="home">Product</label>
+                                                            <input type="text" class="form-control" name="home" placeholder="eg. Flask API Course">
+                                                            <br>
+                                                            <label for="serve">Survey Link</label>
+                                                            <input type="text" class="form-control" name="serve" placeholder="eg. https:/thumber.xyz/p/ew3210jiu9/flask-api-course/">
+                                                            <br>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ daily sales section ] end-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                    <div>
+                                                        <h3 class="text-primary">Cancellation E-mail Generated:</h3>
+                                                        <h3 class="lead">{{openAIAnswer|safe}}</h3>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

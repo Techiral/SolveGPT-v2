@@ -1,0 +1,112 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            
+                            <div class="row">
+                                <h3>Welcome E-mail Generator</h3>
+                                <!--[ daily sales section ] start-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form class="" id="welcome-form" name="welcome-form" action="/english_lit" method="post">
+                                                        <div class="form-group">
+                                                            <label for="title">Recipent</label>
+                                                            <input type="text" class="form-control" id="title" name="title" placeholder="eg. Lakshya">
+                                                            <br>
+                                                            <label for="desc">Company</label>
+                                                            <input type="text" class="form-control" id="desc" name="desc" placeholder="eg. Nogix">
+                                                            <br>
+                                                            <label for="home">Product</label>
+                                                            <input type="text" class="form-control" id="home" name="home" placeholder="eg. Tweet Classifier">
+                                                            <br>
+                                                            <label for="serve">Services</label>
+                                                            <input type="text" class="form-control" id="serve" name="serve" placeholder="eg. Classifies Tweet Based On Emotion">
+                                                            <br>
+                                                            <label for="page">Homepage</label>
+                                                            <input type="text" class="form-control" id="page" name="page" placeholder="eg. https://nogix.org">
+                                                            <br>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </form>
+
+                                                    <script src="https://code.jquery.com/jquery-3.5.1.js"
+                                                        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                                                        crossorigin="anonymous">
+                                                    </script>
+ 
+                                                    <script type="text/javascript">
+                                                        $(document).on('submit','#welcome-form',function(e)
+                                                                    {
+                                                        console.log('hello');
+                                                        e.preventDefault();
+                                                        $.ajax({
+                                                            type:'POST',
+                                                            url:'/welcome_e-mail_generator',
+                                                            data:{
+                                                            title:$("#title").val(),
+                                                            desc:$("#desc").val(),
+                                                            home:$("#home").val(),
+                                                            serve:$("#serve").val(),
+                                                            page:$("#page").val()
+                                                            },
+                                                            success:function()
+                                                            {
+                                                            alert('saved');
+                                                            }
+                                                        })
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ daily sales section ] end-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                    <div>
+                                                        <h3 class="text-primary">Welcome E-mail Generated:</h3>
+                                                        <h3 class="lead">{{openAIAnswer|safe}}</h3>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
